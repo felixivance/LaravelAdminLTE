@@ -13,6 +13,10 @@ $fa-font-path:"../webfonts";
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #fff !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.router-link-exact-active{
+  color: #ffffff;
+  background-color: #3f51b5;
 }
