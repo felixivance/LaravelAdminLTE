@@ -11,12 +11,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>Lara Start</title>
-
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="/css/app.css">
   
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
@@ -72,10 +73,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-stroopwafel"></i>
               <p> Dashboard</p>
-            </a>
+            </router-link>
           </li>
           
           <li class="nav-item has-treeview ">
@@ -102,13 +103,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/profile" class="nav-link">
               <i class="nav-icon fa fa-user"></i>
-              <p>
-               Profile
-               
-              </p>
-            </a>
+              <p>  Profile  </p>
+            </router-link>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -124,44 +122,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" >
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Starter Page</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+    
 
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-    
+        <router-view></router-view>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
+  
 
   <!-- Main Footer -->
   <footer class="main-footer">
